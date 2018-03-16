@@ -1,0 +1,53 @@
+#version 400 compatibility
+#extension GL_ARB_tessellation_shader : enable
+
+in float vRadius[ ];
+in vec3  vCenter[ ];
+
+patch out float tcRadius;
+patch out vec3  tcCenter;
+
+uniform float uDetail;
+
+layout( vertices = 1 )  out;
+
+void main( )
+{
+	gl_out[ gl_InvocationID ].gl_Position = gl_in[ 0 ].gl_Position;	// (0,0,0,1)
+
+	tcCenter = vCenter[ 0 ];
+	tcRadius = vRadius[ 0 ];
+
+	vec4 mx = vec4( vCenter[0] - vec3( vRadius[0], 0., 0. ),  1. );
+	vec4 px = vec4( vCenter[0] + vec3( vRadius[0], 0., 0. ),  1. );
+	vec4 my = vec4( vCenter[0] - vec3( 0., vRadius[0], 0. ),  1. );
+	vec4 py = vec4( vCenter[0] + vec3( 0., vRadius[0], 0. ),  1. );
+	vec4 mz = vec4( vCenter[0] - vec3( 0., 0., vRadius[0] ),  1. );
+	vec4 pz = vec4( vCenter[0] + vec3( 0., 0., vRadius[0] ),  1. );
+
+	mx = gl_ModelViewProjectionMatrix * mx;
+	px = gl_ModelViewProjectionMatrix * px;
+	my = gl_ModelViewProjectionMatrix * my;
+	py = gl_ModelViewProjectionMatrix * py;
+	mz = gl_ModelViewProjectionMatrix * mz;
+	pz = gl_ModelViewProjectionMatrix * pz;
+
+	mx.xy /= mx.w;
+	px.xy /= px.w;
+	my.xy /= my.w;
+	py.xy /= py.w;
+	mz.xy /= mz.w;
+	pz.xy /= pz.w;
+
+	float dx = distance( mx.xy, px.xy );
+	float dy = distance( my.xy, py.xy );
+	float dz = distance( mz.xy, pz.xy );
+	float dmax = sqrt( dx*dx + dy*dy + dz*dz );
+
+	gl_TessLevelOuter[0] = 2.;
+	gl_TessLevelOuter[1] = dmax * uDetail;
+	gl_TessLevelOuter[2] = 2.;
+	gl_TessLevelOuter[3] = dmax * uDetail;
+	gl_TessLevelInner[0] = dmax * uDetail;
+	gl_TessLevelInner[1] = dmax * uDetail;
+}

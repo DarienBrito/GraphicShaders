@@ -1,0 +1,16 @@
+##OpenGL GLIB
+
+GSTAP
+
+Perspective 70
+LookAt 0 0 3   0 0 0   0 1 0
+
+Vertex   beziercurve.vert
+Geometry beziercurve.geom
+Fragment beziercurve.frag
+Program BezierCurve  uNum <2 4 50>
+
+LineWidth 4.
+
+Color [1 0 0]
+LinesAdjacency [0. 0. 0.]  [1. 1. 1.]  [2. 1. 2.]  [3. -1. 0.]

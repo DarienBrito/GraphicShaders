@@ -1,0 +1,23 @@
+##OpenGL GLIB
+
+GSTAP
+
+Ortho -1. 1. -1. 1.
+LookAt 0 0 1  0 0 0  0 1 0
+
+
+Vertex   corvallis.vert
+Fragment corvallis.frag
+Program Corvallis 					\
+	uXcntr 1274035.  uYcntr  341253.	\
+	uScale 50000.					\
+	uPolar <true>					\
+	uK <0.01 1. 1.>					\
+	uTransX <-.3 0. .3>   uTransY <-.3 0. .3>
+
+Color 1. .5 0.
+Shp centerline.shp
+Color 1. 1. 0.
+Shp building.shp
+Color 0. 1. 0.
+Shp parks.shp

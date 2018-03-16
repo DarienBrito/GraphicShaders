@@ -1,0 +1,21 @@
+##OpenGL GLIB
+
+GSTAP
+
+Noise3D 128
+
+Perspective 90
+LookAt 0 0 3  0 0 0  0 1 0
+
+
+Vertex   rainbow.vert
+Fragment rainbow.frag
+Program  Rainbow  uA <0 1 10>  uTol <0. 0. .0625> 		\
+		uNoiseMag <0. 0. 5.>  uNoiseFreq <0. .15 2>	\
+		uUseTextureCoords <false>
+
+
+Rotate -90  1 0 0
+#Teapot
+Torus
+

@@ -1,0 +1,14 @@
+##OpenGL GLIB
+
+GSTAP
+
+Perspective 70
+LookAt 0 0 8  0 0 0  0 1 0
+
+Vertex shrink.vert
+Fragment shrink.frag
+Geometry shrink.geom
+Program ShrinkTriangles  uShrink <-2. 1. 1.>
+
+Color 1. .5 0.
+Obj cow.obj

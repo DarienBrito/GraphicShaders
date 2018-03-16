@@ -1,0 +1,25 @@
+##OpenGL GLIB
+
+GSTAP
+
+Texture2D 6 or.big.tex
+#Texture2D 6 or.bigger.tex
+#Texture2D 6 or.biggest.tex
+
+Vertex terrain.vert
+Fragment terrain.frag
+Program Terrain				\
+	uLightX <-10.  0. 10.0>	\
+	uLightY <-10. 10. 10.0>	\
+	uLightZ <0. 10. 200.0>		\
+	uExag   <0. 1. 50.>		\
+	uColor  {.60, .60 .1, 1. }	\
+	uHgtUnit 6				\
+	uUseColor <false>			\
+	uLevel1 <0. 250. 600.>		\
+	uLevel2 <800. 1000. 3000.>	\
+	uTol <0. 200. 500.>
+
+Translate 0.  0.  -3.
+Scale 1.2569 1. 1.
+QuadXY  .1  1.

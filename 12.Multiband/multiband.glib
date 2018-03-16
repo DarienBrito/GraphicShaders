@@ -1,0 +1,22 @@
+##OpenGL GLIB
+
+GSTAP
+
+Ortho -1. 1.  -1. 1.
+LookAt 0 0 1  0 0 0  0 1 0
+
+Texture2D 5 goes.visible.bmp
+Texture2D 6 goes.infrared.bmp
+Texture2D 7 goes.watervapor.bmp
+
+Vertex   multiband.vert
+Fragment multiband.frag
+Program MultiBand										\
+			uVisibleUnit 5       uInfraRedUnit 6       uWaterVaporUnit 7		\
+			uVisible <0. 1. 1.>  uInfraRed <0. 0. 1.>  uWaterVapor <0. 0. 1.>	\
+			uVisibleThreshold <0. 1. 1.>						\
+			uInfraRedThreshold <0. 0. 1.>						\
+			uWaterVaporThreshold <0. 0. 1.>						\
+			uBrightness <0. 1. 3.>
+
+QuadXY

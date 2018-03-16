@@ -1,0 +1,16 @@
+##OpenGL GLIB
+
+GSTAP
+
+Noise3D 128
+Perspective 70
+LookAt 0 0 3  0 0 0  0 1 0
+
+Vertex cloud.vert
+Fragment cloud.frag
+Program Cloud  \
+	uSkyColor {0. 0. 0.8 1.}   uCloudColor {0.8 0.8 0.8 1.} \
+	uScale <0. .25 4.>  uBias <-1. -.1 1.>
+
+Rotate -90  1 0 0
+Teapot

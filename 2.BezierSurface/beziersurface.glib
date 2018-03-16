@@ -1,0 +1,41 @@
+-##OpenGL GLIB
+
+GSTAP
+
+Perspective 70
+LookAt 2 0 7  2 0 0  0 1 0
+
+Vertex beziersurface.vert
+Fragment beziersurface.frag
+TessControl beziersurface.tcs
+TessEvaluation beziersurface.tes
+# disable the geometry shader if you want to do isolines:
+Geometry beziersurface.geom
+Program BezierSurface   uOuter02 <1 10 50>  uOuter13 <1 10 50>  uInner0 <1 10 50>  uInner1 <1 10 50>  \
+				uShrink <0. 1. 1.>										\
+				uLightX <-10. -10. 10.>   uLightY <-10. 5. 10.>   uLightZ <-10. 0. 10. >
+
+Color [1. .5 0.]
+#Translate -1.5 -0.3 -1.5
+NumPatchVertices 16
+glBegin gl_patches
+    glVertex 0. 2. 0.
+    glVertex 1. 1. 0.
+    glVertex 2. 1. 0.
+    glVertex 3. 2. 0.
+
+    glVertex 0. 1. 1.
+    glVertex 1. -2. 1.
+    glVertex 2. 1. 1.
+    glVertex 3. 0. 1.
+
+    glVertex 0. 0. 2.
+    glVertex 1. 1. 2.
+    glVertex 2. 0. 2.
+    glVertex 3. -1. 2.
+
+    glVertex 0. 0. 3.
+    glVertex 1. 1. 3.
+    glVertex 2. -1. 3.
+    glVertex 3. -1. 3.
+glEnd

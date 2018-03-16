@@ -1,0 +1,19 @@
+##OpenGL GLIB
+
+GSTAP
+
+Ortho -5. 5.  -5. 5.
+LookAt 0 0 1  0 0 0  0 1 0
+
+Texture2D 5 cherries.bmp
+
+Vertex   imageRipple.vert
+Fragment imageRipple.frag
+Program ImageRipple						\
+	uAX <0. 0. 20.>  uAY <0. 0. 20.>		\
+	uTX <50. 120. 500.> uTY <50. 250. 500.>	\
+	uRes 512							\
+	uImageUnit 5
+
+
+QuadXY .2 5.

@@ -1,0 +1,16 @@
+#version 400 compatibility
+#extension GL_ARB_tessellation_shader : enable
+
+uniform int uOuter02, uOuter13, uInner0, uInner1;
+
+layout( vertices = 16 )  out;
+
+void main( )
+{
+	gl_out[ gl_InvocationID ].gl_Position = gl_in[ gl_InvocationID ].gl_Position;
+
+	gl_TessLevelOuter[0] = gl_TessLevelOuter[2] = float(uOuter02);
+	gl_TessLevelOuter[1] = gl_TessLevelOuter[3] = float(uOuter13);
+	gl_TessLevelInner[0]  = float(uInner0);
+	gl_TessLevelInner[1]  = float(uInner1);
+}

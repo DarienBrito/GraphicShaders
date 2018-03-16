@@ -1,0 +1,28 @@
+##OpenGL GLIB
+
+GSTAP
+
+Perspective 70
+LookAt 0 0 4  0 0 0  0 1 0
+
+Vertex sphereadapt.vert
+TessControl sphereadapt.tcs
+TessEvaluation sphereadapt.tes
+Geometry sphereadapt.geom
+Fragment sphereadapt.frag
+Program SphereAdapt			\
+	uDetail <10. 50. 200.>		\
+	uShrink <0. 1. 1.>		\
+	uFlat <false>			\
+	uKa <0. .2 1.>			\
+	uKd <0. .8 1.>			\
+	uColor {1. 1. 0. 0.}		\
+	uLightX <-10. 5. 10.>  uLightY <-10. 10. 10.>  uLightZ <-10. 10. 10.>
+
+NumPatchVertices 1
+
+glBegin gl_patches
+	glVertex 0. 0. 0. .2
+	glVertex 0. 1. 0. .3
+	glVertex 0. 0. 1. .4
+glEnd

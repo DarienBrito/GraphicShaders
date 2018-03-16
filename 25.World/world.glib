@@ -1,0 +1,18 @@
+##OpenGL GLIB
+
+GSTAP
+
+Perspective 70
+LookAt 0 0 2  0 0 0  0 1 0
+
+Texture2D 6 worldtex.bmp
+
+Vertex   world.vert
+Fragment world.frag
+Program World  	uBlend <0. 0. 1.>					\
+			uFrequency <1. 1. 20.>				\
+			uOffsetS <0. 0.5 1.>  uOffsetT <0. 1. 1.>	\
+			uTexUnit 6
+
+Color 1. .3 0.
+Sphere 1. 60 60

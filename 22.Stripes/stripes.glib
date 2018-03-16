@@ -1,0 +1,37 @@
+##OpenGL GLIB
+
+GSTAP
+
+Perspective 70
+LookAt 5 0 10  5 0 0  0 1 0
+
+Vertex stripes.vert
+Fragment stripes.frag
+Program Stripes uModelCoordinates <true>		\
+			uA <0 1. 10>  uP <0. .25 1.>	\
+			uTol <0. 0. .5>
+
+Color 1 0 0
+Sphere 1
+
+Color 1 1 0
+Translate 1.5 0 0
+PushMatrix
+	Cone 0.5 1.
+PopMatrix
+
+Color 0 1 0
+Translate 2 0 0
+PushMatrix
+	Torus .2 1.
+PopMatrix
+
+Color 1 0.5 0
+Translate 4 0 0
+PushMatrix
+	Teapot
+PopMatrix
+
+Color 1 0 1
+Translate 3 0 0
+Cylinder .5 2.

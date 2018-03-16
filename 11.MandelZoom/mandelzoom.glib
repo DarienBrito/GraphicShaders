@@ -1,0 +1,20 @@
+##OpenGL GLIB
+
+GSTAP
+
+Ortho -1.0 1.0  -1.0 1.0
+
+Vertex   mandelzoom.vert
+Fragment mandelzoom.frag
+Program  MandelZoom							\
+		uDoublePrecision <false>				\
+		uZoom <0. 0. 10.>					\
+		uXcenter <-0.55195 -0.5519325 -0.55191>	\
+		uYcenter <0.62814 0.6281658 0.62818>		\
+		uMaxIterations <1 700 2000>			\
+		uInnerColor  {0. 0. 1. 1.}				\
+		uOuterColor1 {1. 1. 0. 1.}				\
+		uOuterColor2 {1. 0. 0. 1.}
+
+
+QuadXY -.5 1.

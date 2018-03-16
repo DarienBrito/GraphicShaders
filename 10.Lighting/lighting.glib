@@ -1,0 +1,27 @@
+##OpenGL GLIB
+
+GSTAP
+
+Perspective 70
+LookAt 0 0 3  0 0 0  0 1 0
+
+Vertex	lighting.vert
+Fragment	lighting.frag
+Program Lighting					\
+		uPerVertex <true>			\
+		uFlat <true>				\
+		uHalfAngle <true>			\
+		uKa <0. 0.1 1.0>			\
+		uKd <0. 0.6 1.0>			\
+		uKs <0. 0.3 1.0>			\
+		uShininess <3. 10. 1000.>		\
+		uLightX <-20. 5. 20.>   		\
+		uLightY <-20. 10. 20.>		\
+		uLightZ <-20. 20. 20.>		\
+		uColor {1. .7 0. 1.}			\
+		uSpecularColor {1. 1. 1. 1.}
+
+
+Rotate -60  1 0 0
+Teapot
+#Torus 1. 0.5 50 50

@@ -1,0 +1,15 @@
+##OpenGL GLIB
+
+GSTAP
+
+Ortho -5. 5.  -5. 5.
+LookAt 0 0 1  0 0 0  0 1 0
+
+Texture2D 5 image.bmp
+
+Vertex   edge.vert
+Fragment edge.frag
+Program Edge  uT <0. 0. 5. >  			\
+		   uResS 512   uResT 512  uImageUnit 5
+
+QuadXY .2 5.

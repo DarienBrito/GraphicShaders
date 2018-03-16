@@ -1,0 +1,17 @@
+##OpenGL GLIB
+
+GSTAP
+
+Noise3D 128
+
+Ortho -5. 5.  -5. 5.
+LookAt 0 0 1  0 0 0  0 1 0
+
+Texture2D 6 cherries.bmp
+Texture2D 7 Hong.village.bmp
+
+Vertex transition.vert
+Fragment transition.frag
+Program Transition  uT <0. 0.5 1.> uBeforeUnit 6  uAfterUnit 7
+
+QuadXY .2 5.

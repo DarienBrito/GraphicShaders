@@ -1,0 +1,16 @@
+##OpenGL GLIB
+
+GSTAP
+
+Noise3D 128
+Perspective 70
+LookAt 0 0 3  0 0 0  0 1 0
+
+Vertex eroded.vert
+Fragment eroded.frag
+Program Eroded  uMin <0. 0.001 1.>  uMax < 0.005 1. 1.>  uScale <0. 1. 3.>
+
+Color 1. .5 0.
+
+Rotate -90  1 0 0
+Teapot

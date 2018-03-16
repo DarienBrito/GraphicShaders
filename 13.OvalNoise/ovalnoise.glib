@@ -1,0 +1,23 @@
+##OpenGL GLIB
+
+GSTAP
+
+Noise3D 128
+
+Perspective 90
+LookAt 0 0 2  0 0 0  0 1 0
+
+
+Vertex   ovalnoise.vert
+Fragment ovalnoise.frag
+Program  OvalNoise							\
+	uAd <.05 .1 .5>  uBd <.05 .1 .5>			\
+	uNoiseAmp <0. 0. 3.>  uNoiseFreq <0. 1. 10.>	\
+	uAlpha <0. 1. 1.>						\
+	uTol <0. 0. .25>						\
+	uUseChromaDepth <false>					\
+	uChromaBlue <-5. -1.0  0.>					\
+	uChromaRed  <-3.  1.0  2.>
+
+Color 1. .9 0
+Sphere
